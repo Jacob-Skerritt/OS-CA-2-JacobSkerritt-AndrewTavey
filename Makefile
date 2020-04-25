@@ -8,3 +8,6 @@ run-task-1-2:
 
 run-task-1-3:
 						@curl https://www.dkit.ie > dkit.html
+
+run-task-1-4: run-task-1-3
+						@{ tail -1 dkit.html; head -1 dkit.html; } |  tr '< >' '[ ]' > mangled.txt
