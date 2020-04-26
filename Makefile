@@ -23,3 +23,6 @@ run-task-3-2:
 
 run-task-3-3:
 						@grep "\s404" access.log.txt | grep -o '\"GET.*'1.1'\"'
+
+run-task-3-4:
+						@grep -hnr "MSIE" access.log.txt > access.ie.log
