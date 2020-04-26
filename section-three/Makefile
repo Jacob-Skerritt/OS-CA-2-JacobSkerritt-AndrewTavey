@@ -4,7 +4,7 @@ run-task-1:
 						@tail -10 access.log.txt
 
 run-task-2:
-						@cut -f 1 -d ' ' access.log.txt | uniq
+						@cut -f 1 -d ' ' access.log.txt | sort | uniq
 
 run-task-3:
 						@grep "\s404" access.log.txt | grep -o 'GET.*'1.1'"'
