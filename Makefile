@@ -1,5 +1,5 @@
 
-
+#Section 1
 run-task-1-1:
 						@printf "The quick brown fox jumps over the lazy dog\n" | wc -w
 
@@ -12,9 +12,15 @@ run-task-1-3:
 run-task-1-4: run-task-1-3
 						@{ tail -1 dkit.html; head -1 dkit.html; } |  tr '< >' '[ ]' > mangled.txt
 
+#Section 2
 run-task-2-1:
 						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]'
 
+#Can you pipe the output of a pre	vious task into the the actions of a new task?
+run-task-2-2: hextodec
+						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]' | cut -b 4,5 | ./hextodec | paste -sd, -
+
+#Section 3
 run-task-3-1:
 						@tail -10 access.log.txt
 
@@ -26,3 +32,9 @@ run-task-3-3:
 
 run-task-3-4:
 						@grep -hnr "MSIE" access.log.txt > access.ie.log
+
+
+#Associated
+hextodec: hextodec.c
+						@gcc -C -Wall -Wextra -Wpedantic hextodec.c -o hextodec
+
