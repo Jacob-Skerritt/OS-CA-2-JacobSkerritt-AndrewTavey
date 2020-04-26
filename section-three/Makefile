@@ -7,7 +7,7 @@ run-task-2:
 						@cut -f 1 -d ' ' access.log.txt | sort | uniq
 
 run-task-3:
-						@grep "\s404" access.log.txt | grep -o 'GET.*'1.1'"'
+						@grep "\s404" access.log.txt | grep -o '"GET.*'1.1'"'
 
 run-task-4:
 						@grep -hnr "MSIE" access.log.txt > access.ie.log
