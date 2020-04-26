@@ -14,11 +14,11 @@ run-task-1-4: run-task-1-3
 
 #Section 2
 run-task-2-1:
-						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]'
+						@grep -Px '\X{7}|\X{9}' colours.txt | grep -v '[g-zG-Z]'
 
 #Can you pipe the output of a pre	vious task into the the actions of a new task?
 run-task-2-2: hextodec
-						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]' | cut -b 4,5 | ./hextodec | paste -sd, -
+						@grep -Px '\X{7}|\X{9}' colours.txt | grep -v '[g-zG-Z]' | cut -b 4,5 | ./hextodec | paste -sd, -
 
 #Section 3
 run-task-3-1:
