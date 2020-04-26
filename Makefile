@@ -26,3 +26,6 @@ run-task-3-3:
 
 run-task-3-4:
 						@grep -hnr "MSIE" access.log.txt > access.ie.log
+
+run-task3-5:
+						@grep -P '^\S+\s+\S+\s+\S+\s+\S+\s+\S+\s+\S+\s+(?!0)([1-9][0-9]|[5-9])\b' access.log.txt | cut -f 4 -d ' ' | sort | uniq -c
