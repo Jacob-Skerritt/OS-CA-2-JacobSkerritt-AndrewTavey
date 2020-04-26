@@ -15,6 +15,10 @@ run-task-1-4: run-task-1-3
 run-task-2-1:
 						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]'
 
+#Can you pipe the output of a prvious task into the the actions of a new task?
+run-task-2-2:
+						@grep -Px '\X{7,9}' colours.txt | grep -v '[g-zG-Z]' | cut -b 4,5 | paste -sd, -
+
 run-task-3-1:
 						@tail -10 access.log.txt
 
