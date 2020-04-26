@@ -20,3 +20,6 @@ run-task-3-1:
 
 run-task-3-2:
 						@cut -f 1 -d ' ' access.log.txt | uniq
+
+run-task-3-3:
+						@grep "\s404" access.log.txt | grep -o '\"GET.*'1.1'\"'
