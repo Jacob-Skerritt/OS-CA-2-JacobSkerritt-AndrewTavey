@@ -14,3 +14,6 @@ run-task-1-4: run-task-1-3
 
 run-task-3-1:
 						@tail -10 access.log.txt
+
+run-task-3-2:
+						@cut -f 1 -d ' ' access.log.txt | uniq
